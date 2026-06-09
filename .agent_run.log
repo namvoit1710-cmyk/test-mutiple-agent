@@ -1,0 +1,48 @@
+INFO  2026-06-09T04:58:40 +253ms service=default version=1.16.2 args=["run","--dangerously-skip-permissions","--print-logs","--command","Design a TODO API with JWT auth"] process_role=main run_id=46c3a72d-90ab-4222-9fdb-e64a7050b136 opencode
+INFO  2026-06-09T04:58:41 +197ms service=default directory=C:\Users\NathanVo\opencode-work\namvoit1710-cmyk__test-mutiple-agent\wt-9a245d33 creating instance
+INFO  2026-06-09T04:58:41 +0ms service=project directory=C:\Users\NathanVo\opencode-work\namvoit1710-cmyk__test-mutiple-agent\wt-9a245d33 fromDirectory
+INFO  2026-06-09T04:58:41 +256ms service=default directory=C:\Users\NathanVo\opencode-work\namvoit1710-cmyk__test-mutiple-agent\wt-9a245d33 bootstrapping
+INFO  2026-06-09T04:58:41 +11ms service=config path=C:\Users\NathanVo\.config\opencode\config.json loading
+INFO  2026-06-09T04:58:41 +5ms service=config path=C:\Users\NathanVo\.config\opencode\opencode.json loading
+INFO  2026-06-09T04:58:41 +0ms service=config path=C:\Users\NathanVo\.config\opencode\opencode.jsonc loading
+INFO  2026-06-09T04:58:41 +6ms service=config path=C:\Users\NathanVo\opencode-work\namvoit1710-cmyk__test-mutiple-agent\wt-9a245d33\opencode.json loading
+INFO  2026-06-09T04:58:41 +140ms service=plugin name= loading internal plugin
+INFO  2026-06-09T04:58:41 +1ms service=plugin name=sW loading internal plugin
+INFO  2026-06-09T04:58:41 +0ms service=plugin name=JM loading internal plugin
+INFO  2026-06-09T04:58:41 +0ms service=plugin name=V7 loading internal plugin
+INFO  2026-06-09T04:58:41 +0ms service=plugin name=wM loading internal plugin
+INFO  2026-06-09T04:58:41 +0ms service=plugin name=HM loading internal plugin
+INFO  2026-06-09T04:58:41 +0ms service=plugin name=VM loading internal plugin
+INFO  2026-06-09T04:58:41 +0ms service=plugin name=OM loading internal plugin
+INFO  2026-06-09T04:58:41 +1ms service=plugin name=PM loading internal plugin
+INFO  2026-06-09T04:58:41 +1ms service=lsp all LSPs are disabled
+INFO  2026-06-09T04:58:41 +1ms service=format all formatters are disabled
+INFO  2026-06-09T04:58:41 +0ms service=format init
+INFO  2026-06-09T04:58:41 +116ms service=session id=ses_15540bdbfffeO1YFxRmJ0fs3Vm slug=happy-rocket version=1.16.2 projectID=aabfc8a6fa7c8f8340c4d9ed334f6e360be5d045 directory=C:\Users\NathanVo\opencode-work\namvoit1710-cmyk__test-mutiple-agent\wt-9a245d33 path= title=New session - 2026-06-09T04:58:41.600Z permission=[{"permission":"question","pattern":"*","action":"deny"},{"permission":"plan_enter","pattern":"*","action":"deny"},{"permission":"plan_exit","pattern":"*","action":"deny"}] cost=0 tokens={"input":0,"output":0,"reasoning":0,"cache":{"read":0,"write":0}} time={"created":1780981121600,"updated":1780981121600} created
+INFO  2026-06-09T04:58:41 +19ms service=server event connected
+INFO  2026-06-09T04:58:41 +11ms service=session.prompt session.id=ses_15540bdbfffeO1YFxRmJ0fs3Vm command=Design a TODO API with JWT auth command
+INFO  2026-06-09T04:58:41 +2ms service=mcp key=gitnexus type=local found
+INFO  2026-06-09T04:58:41 +28ms service=mcp key=context7 type=remote found
+INFO  2026-06-09T04:58:41 +261ms service=vcs branch=agent/planner/31e94668 default_branch=main initialized
+INFO  2026-06-09T04:58:43 +1149ms service=mcp key=context7 transport=StreamableHTTP connected
+INFO  2026-06-09T04:58:43 +36ms service=mcp key=gitnexus mcp stderr: {"level":30,"time":1780981123097,"name":"gitnexus","repoCount":3,"repos":["simplemdg_ai","simplemdg_ai","monorepo-micro"],"msg":"GitNexus: MCP server starting"}
+
+INFO  2026-06-09T04:58:43 +14ms service=mcp key=gitnexus toolCount=13 create() successfully created client
+INFO  2026-06-09T04:58:44 +1126ms service=mcp key=context7 toolCount=2 create() successfully created client
+ERROR 2026-06-09T04:58:44 +300ms service=mcp clientName=context7 error=MCP error -32601: Method not found failed to get prompts
+INFO  2026-06-09T04:58:44 +18ms service=skill count=30 init
+ERROR 2026-06-09T04:58:44 +2ms service=server ref=err_37109448 error=UnknownError cause=UnknownError: UnknownError
+    at <anonymous> (B:/~BUN/root/chunk-hn7ycwr8.js:1068:1794)
+    at SessionPrompt.command (B:/~BUN/root/chunk-7z61mprc.js:3:14628)
+    at SessionPrompt.command (definition) (B:/~BUN/root/chunk-hn7ycwr8.js:1068:1528)
+    at SessionHttpApi.command (B:/~BUN/root/chunk-7z61mprc.js:2:74701)
+    at SessionHttpApi.command (definition) (B:/~BUN/root/chunk-7z61mprc.js:3:14538) failed
+[91m[1mError: [0m{
+  "name": "UnknownError",
+  "data": {
+    "message": "Unexpected server error. Check server logs for details.",
+    "ref": "err_37109448"
+  }
+}
+INFO  2026-06-09T04:58:44 +2ms service=default directory=C:\Users\NathanVo\opencode-work\namvoit1710-cmyk__test-mutiple-agent\wt-9a245d33 disposing instance
+[91m[1mError: [0mCommand not found: "Design a TODO API with JWT auth". Available commands: init, review, gitnexus:detect_impact, gitnexus:generate_map, customize-opencode, writing-plans, react-patterns, gitnexus-exploring, test-driven-development, verification-before-completion, using-superpowers, gitnexus-guide, requesting-code-review, gitnexus-debugging, tdd-workflow, writing-skills, pdf-processing, receiving-code-review, gitnexus-pr-review, using-git-worktrees, systematic-debugging, subagent-driven-development, gitnexus-impact-analysis, autoform-json-config, find-skills, executing-plans, react-pattern, gitnexus-refactoring, context7-mcp, gitnexus-cli, dispatching-parallel-agents, brainstorming, finishing-a-development-branch, caveman
