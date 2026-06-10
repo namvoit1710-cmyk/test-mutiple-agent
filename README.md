@@ -13,44 +13,114 @@ Multi-agent system for automated software development using Docker containers.
 
 ## Quick Start
 
-### 1. Setup Environment
+### Option 1: Using Docker Compose (Recommended)
 
-```bash
-# Copy example env file
+```powershell
+# 1. Setup environment
 cp .env.example .env
+# Edit .env and add your GOOGLE_GENERATIVE_AI_API_KEY
 
-# Edit .env and add your keys
-# Required:
-#   GOOGLE_GENERATIVE_AI_API_KEY=your_key_here
-#   GITHUB_TOKEN=your_token_here
+# 2. Run an agent
+.\run-agent.ps1 planner hello-api.md
+
+# Or run test suite
+.\agents\planner\test\run-test-compose.ps1
 ```
 
-### 2. Build Images
+See [DOCKER-COMPOSE.md](DOCKER-COMPOSE.md) for detailed guide.
+
+### Option 2: Using Build Scripts
 
 ```bash
-# Build all agent images and orchestrator
+# 1. Setup environment
+cp .env.example .env
+# Edit .env and add your GOOGLE_GENERATIVE_AI_API_KEY
+
+# 2. Build Images
 ./build-all.ps1    # Windows
 # or
 ./build-all.sh     # Linux/Mac
+
+# 3. Run an agent manually
+docker run --rm \
+  --env-file .env \
+  -v $(pwd):/workspace \
+  opencode-planner:latest
 ```
 
-### 3. Start Orchestrator
+### Option 3: Using Orchestrator API
+
+### Option 3: Using Orchestrator API
+
+```bash
+# 1. Setup environment
+cp .env.example .env
+# Edit .env and add:
+#   GOOGLE_GENERATIVE_AI_API_KEY=your_key_here
+#   GITHUB_TOKEN=your_token_here
+
+# 2. Build and start orchestrator
+./build-all.ps1    # or build-all.sh
+docker compose up -d
+
+# 3. Verify
+curl http://localhost:8000/health
+```
+
+## Environment Setup
+
+All methods require a `.env` file with your API key:
+
+```env
+GOOGLE_GENERATIVE_AI_API_KEY=your-key-here
+```
+
+**Get your API key:** https://aistudio.google.com/app/apikey
+
+**Quick setup:**
+```powershell
+cp .env.example .env
+# Then edit .env and add your API key
+```
+
+## Testing Agents
+
+### Test Planner Agent
+
+```powershell
+# Interactive test with docker-compose
+.\agents\planner\test\run-test-compose.ps1
+
+# Or using the helper
+.\run-agent.ps1 planner
+```
+
+### Test Other Agents
+
+```powershell
+# Frontend engineer
+.\run-agent.ps1 fe-engineer
+
+# Reviewer
+.\run-agent.ps1 reviewer
+
+# QC engineer
+.\run-agent.ps1 qc-engineer
+```
+
+See [DOCKER-COMPOSE.md](DOCKER-COMPOSE.md) for more testing options.
+
+## Orchestrator API
+
+The orchestrator provides a REST API for running agents programmatically.
+
+### Start Orchestrator
 
 ```bash
 docker compose up -d
 ```
 
-### 4. Verify
-
-```bash
-# Check health
-curl http://localhost:8000/health
-
-# List agents
-curl http://localhost:8000/agents
-```
-
-## API Endpoints
+### API Endpoints
 
 ### GET /health
 Health check and agent list

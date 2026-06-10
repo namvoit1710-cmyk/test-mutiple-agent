@@ -1,0 +1,233 @@
+# Login Form Spec
+
+## Goal
+
+Create a simple login form UI component in the React frontend with username and password fields. When submitted, the form should display an alert showing the values entered by the user.
+
+## User Story
+
+As a user, I want to see a login form with username and password fields, so that I can enter my credentials and see them displayed in an alert when I click submit.
+
+## Requirements
+
+### Functional Requirements
+
+1. **Form Fields**
+   - Username input field (text input)
+   - Password input field (password input - characters should be hidden)
+   - Submit button
+
+2. **Behavior**
+   - When the user types in the username field, the component should track the value
+   - When the user types in the password field, the component should track the value
+   - When the user clicks the submit button:
+     - Prevent the default form submission (no page reload)
+     - Display an alert with the format: `Username: [username_value], Password: [password_value]`
+
+3. **No Validation**
+   - No client-side validation required
+   - Empty fields are allowed
+   - No error messages needed
+
+### Technical Requirements
+
+1. **Component Architecture**
+   - Create a new `LoginForm` component in `src/components/LoginForm.tsx`
+   - The component should be a functional React component using TypeScript
+   - Use React hooks (`useState`) to manage form state
+
+2. **Styling**
+   - Create a separate CSS file `src/components/LoginForm.css`
+   - Center the form on the page
+   - Style the form as a card with padding, border, and shadow for a modern look
+   - Stack form elements vertically
+   - Style inputs and button for good UX
+
+3. **Integration**
+   - Import and render `<LoginForm />` in `App.tsx`
+   - Replace the existing "Hello World" text
+
+## File Structure
+
+```
+app/fe/src/
+├── App.tsx                          # Update to use LoginForm
+├── components/                      # Create this directory
+│   ├── LoginForm.tsx               # New component file
+│   └── LoginForm.css               # New styles file
+```
+
+## Implementation Details
+
+### LoginForm.tsx
+
+**What to implement:**
+
+1. **Import statements:**
+   - Import `useState` from React
+   - Import the CSS file
+
+2. **State management:**
+   - Create state for `username` (initial value: empty string)
+   - Create state for `password` (initial value: empty string)
+
+3. **Event handlers:**
+   - `handleUsernameChange`: Updates username state when user types
+   - `handlePasswordChange`: Updates password state when user types
+   - `handleSubmit`: 
+     - Prevents default form behavior
+     - Shows alert with username and password values
+
+4. **JSX structure:**
+   ```
+   <div className="login-container">
+     <form className="login-form" onSubmit={handleSubmit}>
+       <h2>Login</h2>
+       
+       <div className="form-group">
+         <label htmlFor="username">Username</label>
+         <input 
+           type="text"
+           id="username"
+           value={username}
+           onChange={handleUsernameChange}
+         />
+       </div>
+       
+       <div className="form-group">
+         <label htmlFor="password">Password</label>
+         <input 
+           type="password"
+           id="password"
+           value={password}
+           onChange={handlePasswordChange}
+         />
+       </div>
+       
+       <button type="submit">Login</button>
+     </form>
+   </div>
+   ```
+
+### LoginForm.css
+
+**What to style:**
+
+1. **Container (.login-container):**
+   - Display: flex with center alignment (both horizontal and vertical)
+   - Full viewport height
+   - Background color (light gray or similar)
+
+2. **Form (.login-form):**
+   - Background: white
+   - Padding: 2rem (32px)
+   - Border radius: 8px
+   - Box shadow for depth
+   - Max width: 400px
+   - Width: 100%
+
+3. **Form Groups (.form-group):**
+   - Margin bottom for spacing between fields
+   - Display: flex column to stack label and input
+
+4. **Labels:**
+   - Margin bottom: 0.5rem
+   - Font weight: bold
+   - Font size: 0.9rem
+
+5. **Inputs:**
+   - Padding: 0.75rem
+   - Border: 1px solid light gray
+   - Border radius: 4px
+   - Font size: 1rem
+   - Full width
+
+6. **Button:**
+   - Background: primary color (e.g., #007bff blue)
+   - Color: white
+   - Padding: 0.75rem
+   - Border: none
+   - Border radius: 4px
+   - Font size: 1rem
+   - Cursor: pointer
+   - Full width
+   - Margin top: 1rem
+   - Hover state: darker background
+
+7. **Heading (h2):**
+   - Margin bottom: 1.5rem
+   - Text align: center
+   - Color: dark gray
+
+### App.tsx
+
+**What to change:**
+
+1. Import the LoginForm component at the top
+2. Replace the `<h1>Hello World</h1>` with `<LoginForm />`
+
+## Acceptance Criteria
+
+- [ ] New `components` directory exists in `src/`
+- [ ] `LoginForm.tsx` component file exists and exports a React component
+- [ ] `LoginForm.css` file exists and is imported in LoginForm.tsx
+- [ ] Form has a "Login" heading (h2)
+- [ ] Form has a "Username" label and text input field
+- [ ] Form has a "Password" label and password input field (characters hidden)
+- [ ] Form has a "Login" submit button
+- [ ] Typing in username field updates the component state
+- [ ] Typing in password field updates the component state
+- [ ] Clicking submit button prevents page reload
+- [ ] Clicking submit button displays an alert with format: `Username: [value], Password: [value]`
+- [ ] Form is visually centered on the page
+- [ ] Form has a card-style appearance (white background, shadow, border radius)
+- [ ] Input fields and button are styled and easy to use
+- [ ] App.tsx imports and renders the LoginForm component
+
+## Type
+
+frontend
+
+## Notes for Fresher Developers
+
+### React Concepts Used
+
+1. **Functional Components**: Modern React uses functions instead of classes
+2. **useState Hook**: Lets you add state to functional components
+   - Syntax: `const [value, setValue] = useState(initialValue)`
+   - Returns current value and a function to update it
+3. **Controlled Components**: Input values are controlled by React state
+4. **Event Handlers**: Functions that run when user interacts (onChange, onSubmit)
+5. **Props**: Not used in this component, but good to know for future
+
+### TypeScript Concepts
+
+1. **Type Annotations**: TypeScript adds type checking to JavaScript
+2. **React.FormEvent**: Type for form submit events
+3. **React.ChangeEvent**: Type for input change events
+
+### CSS Concepts
+
+1. **Flexbox**: Used to center content and create layouts
+2. **Box Model**: padding, margin, border work together
+3. **Pseudo-classes**: `:hover` for interactive states
+4. **Class Selectors**: `.classname` targets elements with that class
+
+### Testing the Form
+
+1. Run the dev server: `npm run dev` (or `pnpm dev`)
+2. Open browser to the local URL (usually http://localhost:5173)
+3. You should see the centered login form
+4. Type something in both fields
+5. Click "Login" button
+6. You should see an alert popup with your entered values
+7. Alert should show: `Username: your_username, Password: your_password`
+
+### Common Mistakes to Avoid
+
+1. **Forgetting to prevent default**: Always call `e.preventDefault()` in form submit handler
+2. **Not binding state to inputs**: Use `value={username}` to make inputs controlled
+3. **Forgetting onChange handler**: Without it, inputs won't update when you type
+4. **Wrong event types**: Use `React.FormEvent` for forms, `React.ChangeEvent<HTMLInputElement>` for inputs
+5. **CSS not imported**: Must import the CSS file in the component, not just create it
+6. **Creating directory wrong**: Make sure to create `components` folder in `src/`

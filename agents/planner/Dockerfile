@@ -21,9 +21,7 @@ COPY planner/planner.md /root/.config/opencode/agents/planner.md
 #    relative to cwd. The orchestrator mounts the worktree at /workspace
 #    and we copy our knowledge into a sibling layout the agent can read.
 RUN mkdir -p /opencode-knowledge
-COPY _shared/         /opencode-knowledge/_shared/
 COPY planner/skills/  /opencode-knowledge/skills/
-COPY planner/io-contract.md /opencode-knowledge/io-contract.md
 COPY planner/AGENT.md       /opencode-knowledge/AGENT.md
 
 # 3. Entry script: stage knowledge into the worktree before running opencode,

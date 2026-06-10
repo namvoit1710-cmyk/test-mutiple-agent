@@ -8,6 +8,11 @@ set -euo pipefail
 # The worktree usually already has docs/ (requirement.md lives there), so
 # merge knowledge file-by-file instead of skipping existing directories.
 for path in _shared skills io-contract.md AGENT.md; do
+  # Remove existing symlink if present (handles broken symlinks too)
+  if [ -L "/workspace/$path" ]; then
+    rm "/workspace/$path"
+  fi
+  # Create symlink if target doesn't exist (or was a symlink we just removed)
   if [ ! -e "/workspace/$path" ]; then
     ln -s "/opencode-knowledge/$path" "/workspace/$path"
   fi
@@ -44,7 +49,7 @@ done
 
 # Run opencode with the planner agent. The prompt comes from $PROMPT env var
 # (set by the orchestrator), or you can pass args to docker run.
-PROMPT="${PROMPT:-Read app/docs/spec/requirement.md and produce app/docs/plan/requirement.md.}"
+PROMPT="${PROMPT:-Read the specification from app/docs/spec/requirement.md and write an implementation plan to app/docs/plan/requirement.md.}"
 
 exec opencode run \
   --agent planner \
