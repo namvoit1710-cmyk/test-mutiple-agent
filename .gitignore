@@ -1,0 +1,7 @@
+.env
+orchestrator/.env
+.venv/
+orchestrator/.venv/
+work/
+__pycache__/
+*.pyc

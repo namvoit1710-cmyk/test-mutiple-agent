@@ -1,0 +1,7 @@
+# Keep the image small. Only knowledge files belong here.
+build.md
+*.log
+.git/
+.venv/
+__pycache__/
+node_modules/
