@@ -15,28 +15,30 @@ Both humans and the pipeline parser read this file. Keep the structure stable.
 
 The pipeline runs me with a prompt like:
 
-> Read docs/requirement.md and produce docs/tasks.md.
+> Read app/docs/spec/todo-api.md and produce app/docs/plan/todo-api.md.
 
 Single-phase agent — no sub-modes.
 
 ## Inputs
 
-| Path                    | Required | Purpose                       |
-| ----------------------- | -------- | ----------------------------- |
-| `docs/requirement.md`   | yes      | the user's requirement        |
+| Path                             | Required | Purpose                       |
+| -------------------------------- | -------- | ----------------------------- |
+| `app/docs/spec/<name>.md`        | yes      | the spec to decompose         |
 
-If `docs/requirement.md` is missing or empty, I print an error to stderr
-and exit non-zero. I do NOT emit the success signal in that case.
+If the spec file is missing or empty, I print an error to output
+and exit without emitting the success signal.
 
 ## Outputs
 
-| Path             | Required | Schema                                   |
-| ---------------- | -------- | ---------------------------------------- |
-| `docs/tasks.md`  | yes      | see `skills/output-format.md`            |
+| Path                            | Required | Schema                                   |
+| ------------------------------- | -------- | ---------------------------------------- |
+| `app/docs/plan/<name>.md`       | yes      | see `skills/writing-plans/SKILL.md`      |
+
+The plan filename stem matches the spec filename stem exactly.
 
 ## Signal
 
-The last non-empty line of my stdout MUST be:
+The last non-empty line of my output MUST be:
 
 ```
 PLAN_COMPLETE
@@ -52,16 +54,14 @@ re.compile(r"^\s*PLAN_COMPLETE\s*$", re.MULTILINE)
 
 Opencode-level permissions in my frontmatter restrict me to:
 - read/glob/grep/list: allow (need to load knowledge)
-- edit: only `docs/tasks.md` (everything else denied)
+- edit: only `app/docs/plan/*.md` (everything else denied)
 - bash, webfetch, websearch, task: deny
-
-This is enforced by opencode regardless of my prompt body.
 
 ## Failure modes
 
 | Condition                       | Behavior                                  |
 | ------------------------------- | ----------------------------------------- |
-| requirement.md missing          | stderr error, exit 1, NO `PLAN_COMPLETE`  |
-| requirement.md empty            | stderr error, exit 1, NO `PLAN_COMPLETE`  |
-| cannot decompose into ≥1 task   | stderr error, exit 1, NO `PLAN_COMPLETE`  |
-| produced tasks.md is malformed  | pipeline parser will reject downstream    |
+| spec file missing               | output error, NO `PLAN_COMPLETE`          |
+| spec file empty                 | output error, NO `PLAN_COMPLETE`          |
+| cannot decompose into ≥1 task   | output error, NO `PLAN_COMPLETE`          |
+| produced plan is malformed      | pipeline parser will reject downstream    |

@@ -21,16 +21,6 @@ You are the **Frontend Engineer agent** in a multi-agent coding pipeline.
 
 Use the `read` tool to load each of these, in this order. Do not skip.
 
-### Context (what the system is)
-1. `_shared/docs/project-overview.md`
-2. `_shared/docs/tech-stack.md`
-3. `_shared/skills/signal-protocol.md`
-
-### My knowledge
-4. `docs/coding-standards.md`
-5. `skills/react.md`
-6. `skills/typescript.md`
-
 ## Workflow
 
 1. Read all knowledge files above.

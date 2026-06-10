@@ -1,12 +1,13 @@
 .env
-orchestrator/.env
+orchestrator
 .venv/
-orchestrator/.venv/
 work/
 __pycache__/
 *.pyc
 
 dist/
 build/
-node_modules/
+node_modules
 *.log
+
+cli/

@@ -1,24 +1,4 @@
-version: "3.9"
-
-services:
-  orchestrator:
-    build: ./orchestrator
-    image: opencode-orchestrator:latest
-    container_name: opencode-orchestrator
-    env_file:
-      - .env
-    ports:
-      - "8000:8000"
-    environment:
-      # Override defaults from .env if needed
-      - WORK_ROOT=/work
-      - DOCKER_NETWORK=opencode-agents_agents
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./work:/work                       # bare repos + worktrees persist here
-    networks:
-      - agents
-
 networks:
   agents:
     driver: bridge
+

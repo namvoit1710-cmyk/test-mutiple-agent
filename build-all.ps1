@@ -1,4 +1,4 @@
-# build-all.ps1 — Build base image, all agent images, and orchestrator
+# build-all.ps1 — Build base image and all agent images
 # Build context is always agents/ so Dockerfiles can COPY _shared/ and <agent>/ siblings.
 $ErrorActionPreference = "Stop"
 
@@ -13,10 +13,3 @@ foreach ($agent in $agents) {
         -t "opencode-$agent`:latest" `
         agents/
 }
-
-Write-Host "==> Building orchestrator..." -ForegroundColor Cyan
-docker compose build orchestrator
-
-Write-Host ""
-Write-Host "Done. Start with:  docker compose up -d" -ForegroundColor Green
-Write-Host "Then try:          http://localhost:8000/docs" -ForegroundColor Green

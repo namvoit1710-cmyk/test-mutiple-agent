@@ -22,9 +22,9 @@ COPY planner/planner.md /root/.config/opencode/agents/planner.md
 #    and we copy our knowledge into a sibling layout the agent can read.
 RUN mkdir -p /opencode-knowledge
 COPY _shared/         /opencode-knowledge/_shared/
-COPY planner/docs/    /opencode-knowledge/docs/
 COPY planner/skills/  /opencode-knowledge/skills/
 COPY planner/io-contract.md /opencode-knowledge/io-contract.md
+COPY planner/AGENT.md       /opencode-knowledge/AGENT.md
 
 # 3. Entry script: stage knowledge into the worktree before running opencode,
 #    so the agent's relative reads (`_shared/docs/project-overview.md`) work.
