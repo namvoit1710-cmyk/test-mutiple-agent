@@ -5,3 +5,8 @@ orchestrator/.venv/
 work/
 __pycache__/
 *.pyc
+
+dist/
+build/
+node_modules/
+*.log

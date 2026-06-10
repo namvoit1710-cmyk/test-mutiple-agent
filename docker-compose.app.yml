@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  app-be:
+    build: ./app/be
+    image: opencode-app-be:latest
+    container_name: opencode-app-be
+    ports:
+      - "8001:8000"
+    networks:
+      - app
+
+  app-fe:
+    build: ./app/fe
+    image: opencode-app-fe:latest
+    container_name: opencode-app-fe
+    ports:
+      - "3001:3000"
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge

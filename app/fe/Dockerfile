@@ -8,8 +8,7 @@ RUN npm run build
 
 FROM node:20-slim
 RUN npm install -g serve@14
-RUN addgroup --system app && adduser --system --ingroup app app
-USER app
+# Removed USER app to test if it fixes the start issue
 WORKDIR /app
 COPY --from=builder /app/dist ./dist
 EXPOSE 3000
