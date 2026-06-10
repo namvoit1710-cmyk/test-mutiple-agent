@@ -16,8 +16,8 @@
 |------|--------|
 | `orchestrator/server.py` | Replace remote-clone flow with local-mirror flow; add `HOST_WORK_ROOT` path translation; replace `container.wait()` with streaming watchdog; update `PipelineRequest` (`spec` replaces `requirement_path`); update planner prompt and `parse_tasks_md` call path |
 | `docker-compose.yml` | Mount `.:/repo:ro`; add `HOST_WORK_ROOT` env |
-| `agents/planner/planner.md` | Rewrite: keep frontmatter + persona + ordered skills list; remove rules (move to AGENT.md); update permissions to `app/docs/plan/*.md` |
-| `agents/planner/AGENT.md` | Rewrite: rules only — path boundaries, signal protocol, failure behavior; no skills list |
+| `agents/planner/planner.md` | Rewrite: frontmatter `permission:` block (hard enforcement — edit `app/docs/plan/*.md` allow, `*` deny) + persona + ordered skills list. **Path boundary enforcement lives here as YAML.** |
+| `agents/planner/AGENT.md` | Rewrite: prose rules only — human-readable path boundaries, signal protocol, failure behavior; no skills list, no frontmatter. Loaded as an extra instruction block so the model understands the why. |
 | `agents/planner/Dockerfile` | Add `COPY planner/AGENT.md /opencode-knowledge/AGENT.md` |
 | `agents/planner/entrypoint.sh` | Stage `AGENT.md` symlink into worktree; add `AGENT.md` and `opencode.json` to worktree `.gitignore` |
 | `agents/planner/io-contract.md` | Update invocation prompt, input/output paths, permission boundary |
@@ -878,7 +878,13 @@ git commit -m "feat(orchestrator): route planner to app/docs/spec → app/docs/p
 
 ---
 
-## Task 5: Split planner.md (persona) from AGENT.md (rules) [MEDIUM]
+## Task 5: Split planner.md (persona + enforcement) from AGENT.md (prose rules) [MEDIUM]
+
+**Two-layer boundary pattern:**
+- `planner.md` frontmatter `permission:` = **opencode enforcement** (hard blocks edits outside `app/docs/plan/*.md` at tool level — the model cannot bypass this)
+- `AGENT.md` = **prose explanation** loaded as an extra instruction block (the model reads *why* the boundary exists, reducing attempts to work around it)
+
+Both layers are needed. The permission YAML enforces; the prose explains.
 
 **Files:**
 - Modify: `agents/planner/planner.md`

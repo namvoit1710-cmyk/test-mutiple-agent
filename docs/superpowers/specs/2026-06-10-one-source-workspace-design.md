@@ -72,14 +72,17 @@ it is dead weight.
 
 | File | Contains | Does NOT contain |
 |------|----------|------------------|
-| `planner.md` | opencode frontmatter (model, mode, temperature, permissions); persona — who I am, my job, my workflow; the **ordered skills/knowledge reading list** (the only place skills are listed) | rules that belong to AGENT.md |
-| `AGENT.md` | rules and instructions only: path boundaries (edit `app/docs/plan/` only; never `app/fe/`, `app/be/`, `src/`, `tests/`), signal-protocol rules (`PLAN_COMPLETE` formatting), failure behavior (missing/empty spec → error, no signal) | any skills or knowledge-file list |
+| `planner.md` | opencode frontmatter (model, mode, temperature, **permission block** — the hard enforcement gate for path boundaries); persona — who I am, my job, my workflow; the **ordered skills/knowledge reading list** (the only place skills are listed) | prose rules — those go in AGENT.md |
+| `AGENT.md` | **Prose rules only** — human-readable path boundaries (never write outside `app/docs/plan/`), signal-protocol rules (`PLAN_COMPLETE` formatting), failure behavior (missing/empty spec → error, no signal). Loaded by opencode as an additional instruction block so the model reads and understands the constraints. | skills list; opencode frontmatter; permission YAML |
+
+**Why both?** The `permission:` block in `planner.md` frontmatter is opencode's **enforcement layer** — it hard-blocks any edit outside `app/docs/plan/*.md` at the tool level regardless of what the model tries. `AGENT.md` is the **explanation layer** — the model reads it and understands *why*, which reduces attempts to bypass. Neither alone is sufficient.
 
 ### Docker wiring
 
 - `agents/planner/Dockerfile` copies `AGENT.md` into `/opencode-knowledge/`.
 - `agents/planner/entrypoint.sh` stages it into the worktree alongside the
-  other knowledge symlinks.
+  other knowledge symlinks and appends it to the worktree `.gitignore` so it
+  never lands in a commit.
 - The generated `/workspace/opencode.json` gains
   `"instructions": ["AGENT.md"]` so opencode loads the rules automatically.
 
