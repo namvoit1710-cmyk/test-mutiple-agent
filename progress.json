@@ -1,0 +1,17 @@
+{
+  "issue": "SA-849",
+  "branch": "plan/SA-849-1781206247",
+  "started_at": "2026-06-11T19:30:56Z",
+  "steps": [
+    { "name": "run_planner", "status": "done" },
+    { "name": "tasks", "status": "done", "items": [
+      { "id": "task-1", "title": "Integrate Dashboard Creation API", "domain": "FE", "status": "failed" },
+      { "id": "task-2", "title": "Integrate Chart Creation Flow", "domain": "FE", "status": "failed" },
+      { "id": "task-3", "title": "Implement Chart Assignment to Dashboard Slots", "domain": "FE", "status": "failed" },
+      { "id": "task-4", "title": "Support Editing and Updating Chart Assignments", "domain": "FE", "status": "fe_done" },
+      { "id": "task-5", "title": "Implement Dashboard Layout Management Integration", "domain": "FE", "status": "fe_done" },
+      { "id": "task-6", "title": "Persist and Retrieve Dashboard and Chart Metadata", "domain": "FE", "status": "fe_done" },
+      { "id": "task-7", "title": "UI/UX Enhancements for Dashboard & Chart Integration Flow", "domain": "FE", "status": "failed" }
+    ]}
+  ]
+}
