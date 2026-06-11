@@ -1,0 +1,20 @@
+{
+  "issue": "SA-848",
+  "branch": "plan/SA-848-1781171520",
+  "started_at": "2026-06-11T09:52:04Z",
+  "steps": [
+    { "name": "run_planner", "status": "done" },
+    { "name": "tasks", "status": "done", "items": [
+      { "id": "task-1", "title": "Create `components` directory", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+      { "id": "task-2", "title": "Create `LoginForm.tsx`", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+      { "id": "task-3", "title": "Implement `LoginForm.tsx` structure and state", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+      { "id": "task-4", "title": "Create `LoginForm.css`", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+      { "id": "task-5", "title": "Implement `LoginForm.css` styles", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+      { "id": "task-6", "title": "Update `App.tsx`", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+      { "id": "task-7", "title": "Verify Implementation", "domain": "FE", "status": "skipped", "reason": "agent image not available" }
+    ] },
+    { "name": "verify_plan",  "status": "pending" },
+    { "name": "commit_push",  "status": "pending" },
+    { "name": "open_pr",      "status": "pending" }
+  ]
+}
