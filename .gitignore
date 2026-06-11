@@ -1,3 +1,20 @@
+.env
+orchestrator
+.venv/
+work/
+__pycache__/
+*.pyc
 
+dist/
+build/
+node_modules
+*.log
+
+cli/_shared
+skills
+io-contract.md
+AGENT.md
 opencode.json
-.agent_run.log
+.pipeline-state.json
+skills/writing-plans
+_shared

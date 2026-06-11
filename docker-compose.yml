@@ -1,0 +1,84 @@
+version: "3.9"
+
+# Docker Compose automatically loads .env file from the same directory
+# Make sure .env exists with GOOGLE_GENERATIVE_AI_API_KEY set
+
+services:
+  planner:
+    build:
+      context: ./agents
+      dockerfile: planner/Dockerfile
+    image: opencode-planner:latest
+    container_name: opencode-planner
+    env_file:
+      - .env
+    environment:
+      - GOOGLE_GENERATIVE_AI_API_KEY=${GOOGLE_GENERATIVE_AI_API_KEY}
+      - PROMPT=${PROMPT:-Read app/docs/spec/requirement.md and produce app/docs/plan/requirement.md.}
+    volumes:
+      - ./:/workspace
+      - ./agents/planner:/opencode-knowledge
+    networks:
+      - agents
+    profiles:
+      - planner
+      - test
+
+  fe-engineer:
+    build:
+      context: ./agents
+      dockerfile: fe-engineer/Dockerfile
+    image: opencode-fe-engineer:latest
+    container_name: opencode-fe-engineer
+    env_file:
+      - .env
+    environment:
+      - GOOGLE_GENERATIVE_AI_API_KEY=${GOOGLE_GENERATIVE_AI_API_KEY}
+    volumes:
+      - ./:/workspace
+      - ./agents/fe-engineer:/opencode-knowledge
+    networks:
+      - agents
+    profiles:
+      - fe-engineer
+
+  reviewer:
+    build:
+      context: ./agents
+      dockerfile: reviewer/Dockerfile
+    image: opencode-reviewer:latest
+    container_name: opencode-reviewer
+    env_file:
+      - .env
+    environment:
+      - GOOGLE_GENERATIVE_AI_API_KEY=${GOOGLE_GENERATIVE_AI_API_KEY}
+    volumes:
+      - ./:/workspace
+      - ./agents/reviewer:/opencode-knowledge
+    networks:
+      - agents
+    profiles:
+      - reviewer
+
+  qc-engineer:
+    build:
+      context: ./agents
+      dockerfile: qc-engineer/Dockerfile
+    image: opencode-qc-engineer:latest
+    container_name: opencode-qc-engineer
+    env_file:
+      - .env
+    environment:
+      - GOOGLE_GENERATIVE_AI_API_KEY=${GOOGLE_GENERATIVE_AI_API_KEY}
+    volumes:
+      - ./:/workspace
+      - ./agents/qc-engineer:/opencode-knowledge
+    networks:
+      - agents
+    profiles:
+      - qc-engineer
+
+networks:
+  agents:
+    driver: bridge
+
