@@ -1,0 +1,20 @@
+{
+  "issue": "SA-850",
+  "branch": "plan/SA-850-1781172659",
+  "started_at": "2026-06-11T10:11:03Z",
+  "steps": [
+    { "name": "run_planner",  "status": "done" },
+    {
+      "name": "tasks",
+      "status": "done",
+      "items": [
+        { "id": "task-1", "title": "Identify existing chart assignment display", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+        { "id": "task-2", "title": "Add \"Edit\" button to chart assignment component", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+        { "id": "task-3", "title": "Implement edit mode UI for chart assignment", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+        { "id": "task-4", "title": "Handle local state updates during editing", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+        { "id": "task-5", "title": "Implement \"Save\" and \"Cancel\" buttons for edit mode", "domain": "FE", "status": "skipped", "reason": "agent image not available" },
+        { "id": "task-6", "title": "Display updated chart assignment locally", "domain": "FE", "status": "skipped", "reason": "agent image not available" }
+      ]
+    }
+  ]
+}
