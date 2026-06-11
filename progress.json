@@ -1,0 +1,9 @@
+{
+  "issue": "SA-848",
+  "branch": "plan/SA-848-1781196508",
+  "started_at": "2026-06-11T16:48:32Z",
+  "steps": [
+    { "name": "run_planner", "status": "done" },
+    { "name": "tasks", "status": "pending", "items": [] }
+  ]
+}
