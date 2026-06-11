@@ -78,6 +78,41 @@ services:
     profiles:
       - qc-engineer
 
+  orchestrator:
+    build:
+      context: ./agents
+      dockerfile: orchestrator/Dockerfile
+    image: opencode-orchestrator:latest
+    container_name: opencode-orchestrator
+    env_file:
+      - .env
+    environment:
+      - GOOGLE_GENERATIVE_AI_API_KEY=${GOOGLE_GENERATIVE_AI_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GIT_REPO_URL=${GIT_REPO_URL}
+      - GIT_USER_NAME=${GIT_USER_NAME:-planner-bot}
+      - GIT_USER_EMAIL=${GIT_USER_EMAIL:-bot@example.com}
+      - BASE_BRANCH=${BASE_BRANCH:-main}
+      - JIRA_ISSUE_KEY=${JIRA_ISSUE_KEY}
+      - JIRA_BASE_URL=${JIRA_BASE_URL}
+      - JIRA_USER_EMAIL=${JIRA_USER_EMAIL}
+      - JIRA_API_TOKEN=${JIRA_API_TOKEN}
+      - HOST_WORK_ROOT=${HOST_WORK_ROOT}
+      - DOCKER_NETWORK=${DOCKER_NETWORK:-opencode-agents_agents}
+    volumes:
+      # Mount work/ only — NOT the project root. This prevents git reset --hard
+      # from overwriting host files. HOST_WORK_ROOT is the absolute host path
+      # the Docker daemon uses when spawning sibling (planner) containers.
+      - ${HOST_WORK_ROOT}:/work
+      - /var/run/docker.sock:/var/run/docker.sock
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    networks:
+      - agents
+    profiles:
+      - orchestrator
+
 networks:
   agents:
     driver: bridge

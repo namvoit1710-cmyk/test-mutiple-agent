@@ -1,5 +1,4 @@
 .env
-orchestrator
 .venv/
 work/
 __pycache__/
@@ -10,11 +9,3 @@ build/
 node_modules
 *.log
 
-cli/_shared
-skills
-io-contract.md
-AGENT.md
-opencode.json
-.pipeline-state.json
-skills/writing-plans
-_shared

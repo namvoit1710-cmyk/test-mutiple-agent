@@ -2,11 +2,11 @@
 # run-agent.ps1 — Run agents using docker-compose with .env support
 param(
     [Parameter(Position=0)]
-    [ValidateSet('planner', 'fe-engineer', 'reviewer', 'qc-engineer')]
+    [ValidateSet('planner', 'fe-engineer', 'reviewer', 'qc-engineer', 'orchestrator')]
     [string]$Agent = 'planner',
-    
+
     [Parameter(Position=1)]
-    [string]$SpecFile = '',
+    [string]$IssueOrSpec = '',
     
     [switch]$Build,
     [switch]$NoBuild
@@ -41,8 +41,37 @@ if ($envContent -notmatch 'GOOGLE_GENERATIVE_AI_API_KEY=.+') {
 Write-Host "Agent: $Agent" -ForegroundColor Yellow
 Write-Host ""
 
-# Determine spec directory based on agent
+# ── Orchestrator ─────────────────────────────────────────────────────────────
+if ($Agent -eq 'orchestrator') {
+    $issueKey = if (-not [string]::IsNullOrWhiteSpace($IssueOrSpec)) {
+        $IssueOrSpec.Trim().ToUpper()
+    } else {
+        (Read-Host "Enter Jira issue key (e.g. SA-847)").Trim().ToUpper()
+    }
+    if ([string]::IsNullOrWhiteSpace($issueKey)) {
+        Write-Host "[ERROR] Jira issue key is required" -ForegroundColor Red; exit 1
+    }
+    Write-Host "Issue key: $issueKey`n" -ForegroundColor Yellow
+    $env:JIRA_ISSUE_KEY = $issueKey
+    if (-not (Test-Path ".\work")) { New-Item -ItemType Directory -Path ".\work" | Out-Null }
+    $hostWorkRoot = (Resolve-Path ".\work").Path -replace '\\', '/'
+    $env:HOST_WORK_ROOT = $hostWorkRoot
+    Write-Host "HOST_WORK_ROOT: $hostWorkRoot`n" -ForegroundColor Gray
+    if ($Build) {
+        docker compose build orchestrator
+        if ($LASTEXITCODE -ne 0) { Write-Host "[ERROR] Build failed" -ForegroundColor Red; exit 1 }
+    }
+    docker compose run --rm orchestrator
+    $exitCode = $LASTEXITCODE
+    Write-Host ""
+    if ($exitCode -eq 0) { Write-Host "[OK] Orchestrator completed successfully" -ForegroundColor Green }
+    else { Write-Host "[FAIL] Orchestrator failed (exit $exitCode)" -ForegroundColor Red; exit $exitCode }
+    exit 0
+}
+
+# ── Sub-agents ────────────────────────────────────────────────────────────────
 $SPEC_DIR = "app/docs/spec"
+$SpecFile = $IssueOrSpec
 
 # List available spec files if not provided
 if ([string]::IsNullOrWhiteSpace($SpecFile)) {
