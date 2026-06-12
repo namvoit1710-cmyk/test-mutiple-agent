@@ -1,0 +1,29 @@
+{
+  "issue": "SA-848",
+  "branch": "plan/SA-848-1781238749",
+  "started_at": "2026-06-12T04:32:37Z",
+  "steps": [
+    { "name": "run_planner",       "status": "done" },
+    { "name": "run_qc_manual",     "status": "done" },
+        { "name": "execution", "status": "done", "items": [
+        { "id": "task-1", "title": "Create `components` directory", "domain": "FE", "status": "fe_done" },
+        { "id": "task-2", "title": "Create `LoginForm.tsx` component", "domain": "FE", "status": "fe_done" },
+        { "id": "task-3", "title": "Create `LoginForm.css` styles", "domain": "FE", "status": "fe_done" },
+        { "id": "task-4", "title": "Integrate `LoginForm` into `App.tsx`", "domain": "FE", "status": "fe_done" }
+      ]
+    },
+    {
+      "name": "run_qc_automation",
+      "status": "done",
+      "total_tasks": 4,
+      "pass": 0,
+      "fail": 4,
+      "results": [
+        { "task_id": "task-1", "result": "error", "detail": "Neither `tests/manual/fe/SA-848/task-1.md` nor `tests/manual/be/SA-848/task-1.md` exists. Cannot determine the task domain." },
+        { "task_id": "task-2", "result": "error", "detail": "Neither `tests/manual/fe/SA-848/task-2.md` nor `tests/manual/be/SA-848/task-2.md` exists. Cannot determine the task domain." },
+        { "task_id": "task-3", "result": "error", "detail": "Neither `tests/manual/fe/SA-848/task-3.md` nor `tests/manual/be/SA-848/task-3.md` exists. Cannot determine the task domain." },
+        { "task_id": "task-4", "result": "error", "detail": "Neither `tests/manual/fe/SA-848/task-4.md` nor `tests/manual/be/SA-848/task-4.md` exists. Cannot determine the task domain." }
+      ]
+    }
+  ]
+}
