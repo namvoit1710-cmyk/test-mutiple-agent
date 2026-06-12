@@ -16,3 +16,4 @@ node_modules
 opencode.json
 /.pipeline-state.json
 /skills/writing-plans
+/docs
