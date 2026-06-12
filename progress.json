@@ -1,0 +1,1 @@
+{"issue": "SA-848", "branch": "plan/SA-848-1781240938", "started_at": "2026-06-12T10:00:00Z", "steps": [{"name": "run_planner", "status": "failed"}, {"name": "run_qc_manual", "status": "pending"}, {"name": "execution", "status": "pending", "items": []}, {"name": "run_qc_automation", "status": "pending", "total_tasks": 0, "pass": 0, "fail": 0, "results": []}]}

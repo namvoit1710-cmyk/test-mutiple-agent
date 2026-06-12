@@ -1,11 +1,3 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "google": {
-      "models": {
-        "gemma-4-31b-it":     { "reasoning": false },
-        "gemma-4-26b-a4b-it": { "reasoning": false }
-      }
-    }
-  }
+  "$schema": "https://opencode.ai/config.json"
 }
