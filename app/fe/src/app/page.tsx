@@ -1,22 +1,10 @@
-
 import React from 'react';
-import MainContainer from '../components/MainContainer';
-import FormCard from '../components/FormCard';
-import EmailInput from '../components/EmailInput';
-import PasswordInput from '../components/PasswordInput';
-import SubmitButton from '../components/ui/SubmitButton';
 
-export default function LoginPage() {
+export default function Page() {
   return (
-    <MainContainer>
-      <FormCard>
-        <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
-        <form className="space-y-4">
-          <EmailInput label="Email Address" placeholder="Enter your email" />
-          <PasswordInput label="Password" placeholder="Enter your password" />
-          <SubmitButton>Login</SubmitButton>
-        </form>
-      </FormCard>
-    </MainContainer>
+    <div>
+      <h1>Welcome to the App</h1>
+      {/* This page might serve as a landing or dashboard if not logged in, or redirect */}
+    </div>
   );
 }
