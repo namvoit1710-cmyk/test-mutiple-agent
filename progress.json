@@ -1,0 +1,9 @@
+{
+  "issue": "SA-799",
+  "branch": "plan/SA-799-1781249561",
+  "started_at": "2026-06-12T07:32:44Z",
+  "steps": [
+    { "name": "run_planner", "status": "failed" },
+    { "name": "tasks",       "status": "pending", "items": [] }
+  ]
+}
