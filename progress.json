@@ -1,0 +1,89 @@
+{
+  "issue": "SA-848",
+  "branch": "plan/SA-848-1781284909",
+  "started_at": "2026-06-12T17:21:53Z",
+  "orchestrator_usage": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "duration_ms": 241944
+  },
+  "steps": [
+    {
+      "name": "run_planner",
+      "status": "done",
+      "usage": {
+        "input": 100,
+        "output": 100,
+        "total": 200
+      }
+    },
+    {
+      "name": "run_qc_manual",
+      "status": "done",
+      "usage": {
+        "input": 368,
+        "output": 2477,
+        "total": 2845
+      }
+    },
+    {
+      "name": "execution",
+      "status": "done",
+      "items": [
+        {
+          "id": "task-1",
+          "title": "Create home page UI",
+          "domain": "FE",
+          "status": "failed",
+          "usage": {
+            "input": 0,
+            "output": 0,
+            "total": 0
+          }
+        },
+        {
+          "id": "task-2",
+          "title": "Create login page UI",
+          "domain": "FE",
+          "status": "failed",
+          "usage": {
+            "input": 0,
+            "output": 0,
+            "total": 0
+          }
+        },
+        {
+          "id": "task-3",
+          "title": "Handle app routing",
+          "domain": "FE",
+          "status": "failed",
+          "usage": {
+            "input": 0,
+            "output": 0,
+            "total": 0
+          }
+        },
+        {
+          "id": "task-4",
+          "title": "Handle app authentication",
+          "domain": "FE+BE",
+          "status": "skipped",
+          "usage": {
+            "input": 0,
+            "output": 0,
+            "total": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "run_qc_automation",
+      "status": "done",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
