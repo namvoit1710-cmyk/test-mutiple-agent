@@ -1,0 +1,28 @@
+{
+  "issue": "SA-871",
+  "branch": "plan/SA-871-1781259570",
+  "started_at": "2026-06-12T10:00:00Z",
+  "orchestrator_usage": { "input": 0, "output": 0, "total": 0 },
+  "steps": [
+    { "name": "run_planner",   "status": "done", "usage": { "input": 1088, "output": 1000, "total": 2088 } },
+    { "name": "run_qc_manual", "status": "done", "usage": { "input": 11188, "output": 10118, "total": 21306 } },
+    { "name": "execution",     "status": "done", "items": [
+      { "id": "task-1", "title": "Create the Full Name Input Component", "domain": "FE", "status": "fe_done", "usage": { "input": 0, "output": 0, "total": 0 } },
+      { "id": "task-2", "title": "Implement Input Field UI and State", "domain": "FE", "status": "fe_done", "usage": { "input": 1234, "output": 5678, "total": 6912 } },
+      { "id": "task-3", "title": "Implement Validation Logic", "domain": "FE", "status": "fe_done", "usage": { "input": 1234, "output": 5678, "total": 6912 } },
+      { "id": "task-4", "title": "Manage Form Submission State", "domain": "FE", "status": "fe_done", "usage": { "input": 1234, "output": 5678, "total": 6912 } },
+      { "id": "task-5", "title": "Write Unit Tests for FullNameInput Component", "domain": "FE", "status": "fe_done", "usage": { "input": 106, "output": 101, "total": 207 } },
+      { "id": "task-6", "title": "Write Integration Tests for Form Submission", "domain": "FE", "status": "fe_done", "usage": { "input": 106, "output": 101, "total": 207 } },
+      { "id": "task-7", "title": "Conduct Code Review", "domain": "FE", "status": "fe_done", "usage": { "input": 133, "output": 33, "total": 166 } },
+      { "id": "task-8", "title": "Merge Changes", "domain": "FE", "status": "fe_done", "usage": { "input": 106, "output": 100, "total": 206 } }
+    ] },
+    {
+      "name": "run_qc_automation",
+      "status": "running",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
