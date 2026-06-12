@@ -1,0 +1,10 @@
+{
+  "issue": "SA-847",
+  "branch": "plan/SA-847-1781253454",
+  "started_at": "2026-06-12T08:37:36Z",
+  "steps": [
+    { "name": "run_planner",   "status": "failed" },
+    { "name": "run_qc_manual", "status": "pending" },
+    { "name": "domains",       "status": "pending", "items": [] }
+  ]
+}
