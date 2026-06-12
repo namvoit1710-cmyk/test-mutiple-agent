@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface FormCardProps {
@@ -7,7 +6,7 @@ interface FormCardProps {
 
 const FormCard: React.FC<FormCardProps> = ({ children }) => {
   return (
-    <div className="p-8 bg-white rounded-lg shadow-md">
+    <div className="form-card">
       {children}
     </div>
   );

@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface MainContainerProps {
@@ -7,7 +6,7 @@ interface MainContainerProps {
 
 const MainContainer: React.FC<MainContainerProps> = ({ children }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="main-container">
       {children}
     </div>
   );
