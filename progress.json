@@ -1,0 +1,114 @@
+{
+  "issue": "SA-875",
+  "branch": "plan/SA-875-1781339521",
+  "started_at": "2026-06-13T10:00:00.000000Z",
+  "orchestrator_usage": { "input": 0, "output": 0, "total": 0 },
+  "steps": [
+    { "name": "run_planner",   "status": "done", "usage": { "input": 1113, "output": 1017, "total": 2130, "started_at": "2026-06-13T10:00:00.000000Z", "finished_at": "2026-06-13T10:00:51.089000Z", "duration_ms": 51089 } },
+    { "name": "run_qc_manual", "status": "done", "usage": { "input": 1113, "output": 1017, "total": 2130, "started_at": "2026-06-13T10:00:51.089000Z", "finished_at": "2026-06-13T10:00:22.878000Z", "duration_ms": 31789 } },
+    { "name": "execution",     "status": "done", "items": [
+      {
+        "id": "task-1",
+        "title": "Create Auth Context and Provider",
+        "domain": "FE",
+        "status": "fe_done",
+        "usage": {
+          "input": 1113,
+          "output": 1017,
+          "total": 2130,
+          "started_at": "2026-06-13T10:00:34.342000Z",
+          "finished_at": "2026-06-13T10:00:00.779000Z",
+          "duration_ms": 26437
+        }
+      },
+      {
+        "id": "task-2",
+        "title": "Implement useAuth Hook",
+        "domain": "FE",
+        "status": "fe_done",
+        "usage": {
+          "input": 1113,
+          "output": 1017,
+          "total": 2130,
+          "started_at": "2026-06-13T10:00:20.861000Z",
+          "finished_at": "2026-06-13T10:00:35.014000Z",
+          "duration_ms": 14153
+        }
+      },
+      {
+        "id": "task-3",
+        "title": "Create PrivateRoute Component",
+        "domain": "FE",
+        "status": "fe_done",
+        "usage": {
+          "input": 1300,
+          "output": 1000,
+          "total": 2300,
+          "started_at": "2026-06-13T10:00:49.046000Z",
+          "finished_at": "2026-06-13T10:00:31.474000Z",
+          "duration_ms": 42428
+        }
+      },
+      {
+        "id": "task-4",
+        "title": "Create AuthRoute Component",
+        "domain": "FE",
+        "status": "fe_done",
+        "usage": {
+          "input": 1300,
+          "output": 1000,
+          "total": 2300,
+          "started_at": "2026-06-13T10:00:50.846000Z",
+          "finished_at": "2026-06-13T10:00:24.992000Z",
+          "duration_ms": 34146
+        }
+      },
+      {
+        "id": "task-5",
+        "title": "Update App.tsx for AuthProvider and BrowserRouter",
+        "domain": "FE",
+        "status": "fe_done",
+        "usage": {
+          "input": 1300,
+          "output": 1000,
+          "total": 2300,
+          "started_at": "2026-06-13T10:00:47.652000Z",
+          "finished_at": "2026-06-13T10:00:20.948000Z",
+          "duration_ms": 33296
+        }
+      },
+      {
+        "id": "task-8",
+        "title": "Verify No Auth -> /home Redirection",
+        "domain": "FE",
+        "status": "skipped"
+      },
+      {
+        "id": "task-9",
+        "title": "Verify Authenticated -> /login Redirection",
+        "domain": "FE",
+        "status": "skipped"
+      },
+      {
+        "id": "task-10",
+        "title": "Verify No Auth -> /login Renders",
+        "domain": "FE",
+        "status": "skipped"
+      },
+      {
+        "id": "task-11",
+        "title": "Verify Authenticated -> /home Renders",
+        "domain": "FE",
+        "status": "skipped"
+      }
+    ] },
+    {
+      "name": "run_qc_automation",
+      "status": "pending",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
