@@ -1,0 +1,309 @@
+{
+  "issue": "SA-847",
+  "branch": "plan/SA-847-1781383534",
+  "started_at": "2026-06-13T20:46:28Z",
+  "orchestrator_usage": {
+    "input": 6452,
+    "output": 456,
+    "total": 6908,
+    "duration_ms": 3834109
+  },
+  "steps": [
+    {
+      "name": "run_planner",
+      "status": "done",
+      "usage": {
+        "input": 1067,
+        "output": 1920,
+        "total": 2987,
+        "started_at": "2026-06-13T20:50:00Z",
+        "finished_at": "2026-06-13T20:50:40Z",
+        "duration_ms": 40000
+      },
+      "resources": {
+        "cpu_percent": 839.2,
+        "mem_used_mb": 1381.6,
+        "mem_percent": 15.6,
+        "images_disk_mb": 0,
+        "containers_disk_mb": 0,
+        "volumes_disk_mb": 0,
+        "build_cache_disk_mb": 0,
+        "captured_at": "2026-06-13T20:50:40Z"
+      }
+    },
+    {
+      "name": "run_qc_manual",
+      "status": "done",
+      "usage": {
+        "input": 6023,
+        "output": 3396,
+        "total": 9419,
+        "started_at": "2026-06-13T20:51:00Z",
+        "finished_at": "2026-06-13T20:54:55Z",
+        "duration_ms": 225000
+      },
+      "resources": {
+        "cpu_percent": 2.9,
+        "mem_used_mb": 689.5,
+        "mem_percent": 41.9,
+        "images_disk_mb": 28948.5,
+        "containers_disk_mb": 887.5,
+        "volumes_disk_mb": 240,
+        "build_cache_disk_mb": 21176.3,
+        "captured_at": "2026-06-13T20:54:55Z"
+      }
+    },
+    {
+      "name": "execution",
+      "status": "done",
+      "items": [
+        {
+          "id": "task-1",
+          "title": "Create Auth Context and Constants",
+          "domain": "FE",
+          "status": "fe_done",
+          "usage": {
+            "input": 5234,
+            "output": 1120,
+            "total": 6354,
+            "started_at": "2026-06-13T20:57:01Z",
+            "finished_at": "2026-06-13T21:00:13Z",
+            "duration_ms": 192000
+          },
+          "resources": {
+            "cpu_percent": 3.4,
+            "mem_used_mb": 823.3,
+            "mem_percent": 69,
+            "images_disk_mb": 28989.4,
+            "containers_disk_mb": 921.3,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 21176.3,
+            "captured_at": "2026-06-13T21:00:13Z"
+          }
+        },
+        {
+          "id": "task-2",
+          "title": "Implement PrivateRoute Component",
+          "domain": "FE",
+          "status": "fe_done",
+          "usage": {
+            "input": 1682,
+            "output": 710,
+            "total": 2392,
+            "started_at": "2026-06-13T21:01:46Z",
+            "finished_at": "2026-06-13T21:04:21Z",
+            "duration_ms": 155000
+          },
+          "resources": {
+            "cpu_percent": 4.4,
+            "mem_used_mb": 828.3,
+            "mem_percent": 69.1,
+            "images_disk_mb": 28989.4,
+            "containers_disk_mb": 921.8,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 21176.3,
+            "captured_at": "2026-06-13T21:04:21Z"
+          }
+        },
+        {
+          "id": "task-3",
+          "title": "Implement AuthRoute Component",
+          "domain": "FE",
+          "status": "fe_done",
+          "usage": {
+            "input": 1968,
+            "output": 750,
+            "total": 2718,
+            "started_at": "2026-06-13T21:06:04Z",
+            "finished_at": "2026-06-13T21:08:57Z",
+            "duration_ms": 173000
+          },
+          "resources": {
+            "cpu_percent": 5.4,
+            "mem_used_mb": 815.9,
+            "mem_percent": 69,
+            "images_disk_mb": 28989.4,
+            "containers_disk_mb": 922.3,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 21176.3,
+            "captured_at": "2026-06-13T21:08:57Z"
+          }
+        },
+        {
+          "id": "task-4",
+          "title": "Develop PasswordControl Component",
+          "domain": "FE",
+          "status": "fe_done",
+          "usage": {
+            "input": 3801,
+            "output": 1186,
+            "total": 4987,
+            "started_at": "2026-06-13T21:10:51Z",
+            "finished_at": "2026-06-13T21:13:07Z",
+            "duration_ms": 136000
+          },
+          "resources": {
+            "cpu_percent": 7.9,
+            "mem_used_mb": 822,
+            "mem_percent": 69,
+            "images_disk_mb": 28989.4,
+            "containers_disk_mb": 922.8,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 21176.3,
+            "captured_at": "2026-06-13T21:13:07Z"
+          }
+        },
+        {
+          "id": "task-5",
+          "title": "Build Login Page",
+          "domain": "FE",
+          "status": "fe_done",
+          "usage": {
+            "input": 3597,
+            "output": 1189,
+            "total": 4786,
+            "started_at": "2026-06-13T21:15:09Z",
+            "finished_at": "2026-06-13T21:19:45Z",
+            "duration_ms": 276000
+          },
+          "resources": {
+            "cpu_percent": 21,
+            "mem_used_mb": 508.8,
+            "mem_percent": 3.2,
+            "images_disk_mb": 28989.4,
+            "containers_disk_mb": 923.4,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 21176.3,
+            "captured_at": "2026-06-13T21:19:45Z"
+          }
+        },
+        {
+          "id": "task-6",
+          "title": "Build Home Page",
+          "domain": "FE",
+          "status": "fe_done",
+          "usage": {
+            "input": 3909,
+            "output": 1010,
+            "total": 4919,
+            "started_at": "2026-06-13T21:22:00Z",
+            "finished_at": "2026-06-13T21:25:17Z",
+            "duration_ms": 217000
+          },
+          "resources": {
+            "cpu_percent": 26.3,
+            "mem_used_mb": 1301.3,
+            "mem_percent": 8.2,
+            "images_disk_mb": 29296.6,
+            "containers_disk_mb": 1259.5,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 21176.3,
+            "captured_at": "2026-06-13T21:25:17Z"
+          }
+        },
+        {
+          "id": "task-7",
+          "title": "Integrate Routes and Auth Provider in App.tsx",
+          "domain": "FE",
+          "status": "fe_done",
+          "usage": {
+            "input": 3000,
+            "output": 1000,
+            "total": 4000,
+            "started_at": "2026-06-13T21:28:08Z",
+            "finished_at": "2026-06-13T21:31:12Z",
+            "duration_ms": 184000
+          },
+          "resources": {
+            "cpu_percent": 7.1,
+            "mem_used_mb": 1318.9,
+            "mem_percent": 8.4,
+            "images_disk_mb": 29235.2,
+            "containers_disk_mb": 1198.1,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 21176.3,
+            "captured_at": "2026-06-13T21:31:12Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "run_qc_automation",
+      "status": "done",
+      "total_tasks": 7,
+      "pass": 5,
+      "fail": 2,
+      "results": [
+        {
+          "task_id": "task-1",
+          "result": "pass",
+          "detail": ""
+        },
+        {
+          "task_id": "task-2",
+          "result": "fail",
+          "error": "TC assertion failed: expected element to be visible",
+          "detail": "Playwright: locator resolved to 0 elements; expected 1. Test timed out after 5000ms."
+        },
+        {
+          "task_id": "task-3",
+          "result": "pass",
+          "detail": ""
+        },
+        {
+          "task_id": "task-4",
+          "result": "pass",
+          "detail": ""
+        },
+        {
+          "task_id": "task-5",
+          "result": "fail",
+          "error": "TC assertion failed: expected element to be visible",
+          "detail": "Playwright: locator resolved to 0 elements; expected 1. Test timed out after 5000ms."
+        },
+        {
+          "task_id": "task-6",
+          "result": "pass",
+          "detail": ""
+        },
+        {
+          "task_id": "task-7",
+          "result": "pass",
+          "detail": ""
+        }
+      ],
+      "started_at": "2026-06-13T21:32:00Z",
+      "finished_at": "2026-06-13T21:38:30Z",
+      "duration_ms": 383000,
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      },
+      "resources": {
+        "cpu_percent": 4.4,
+        "mem_used_mb": 959.9,
+        "mem_percent": 6.1,
+        "images_disk_mb": 29143,
+        "containers_disk_mb": 1106.9,
+        "volumes_disk_mb": 240,
+        "build_cache_disk_mb": 21176.3,
+        "captured_at": "2026-06-13T21:38:30Z"
+      }
+    },
+    {
+      "name": "fix_bug",
+      "status": "running",
+      "items": [
+        {
+          "id": "fix-task-2",
+          "title": "QC fix: Implement PrivateRoute Component",
+          "domain": "FE",
+          "status": "fe_implementing",
+          "error": "",
+          "started_at": "2026-06-13T21:42:00Z"
+        }
+      ]
+    }
+  ]
+}
