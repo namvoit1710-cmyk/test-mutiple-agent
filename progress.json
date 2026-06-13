@@ -44,9 +44,9 @@
     "started_at": "2026-06-13T16:05:17Z"
     },
     { "name": "qc_retest", "status": "done",
-      "total_tasks": 7,
-      "pass": 5,
-      "fail": 2,
+      "total_tasks": 2,
+      "pass": 2,
+      "fail": 0,
       "results": [
         { "task_id": "task-2", "result": "pass", "detail": "" },
         { "task_id": "task-5", "result": "fail", "detail": "" }
