@@ -1,0 +1,52 @@
+{
+  "issue": "SA-875",
+  "branch": "plan/SA-875-1781310798",
+  "started_at": "2026-06-13T00:33:26Z",
+  "orchestrator_usage": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "started_at": "2026-06-13T00:33:26Z",
+    "finished_at": "2026-06-13T00:33:40Z",
+    "duration_ms": 14196
+  },
+  "steps": [
+    {
+      "name": "run_planner",
+      "status": "pending",
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "started_at": "",
+        "finished_at": "",
+        "duration_ms": 0
+      }
+    },
+    {
+      "name": "run_qc_manual",
+      "status": "pending",
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "started_at": "",
+        "finished_at": "",
+        "duration_ms": 0
+      }
+    },
+    {
+      "name": "execution",
+      "status": "pending",
+      "items": []
+    },
+    {
+      "name": "run_qc_automation",
+      "status": "pending",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
