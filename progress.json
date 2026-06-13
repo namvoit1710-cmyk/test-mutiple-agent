@@ -1,0 +1,24 @@
+{
+  "issue": "SA-875",
+  "branch": "plan/SA-875-1781327868",
+  "started_at": "2026-06-13T10:00:00Z",
+  "orchestrator_usage": { "input": 333, "output": 708, "total": 1041 },
+  "steps": [
+    { "name": "run_planner",   "status": "done", "usage": { "input": 333, "output": 708, "total": 1041, "started_at": "2026-06-13T10:00:00Z", "finished_at": "2026-06-13T10:00:35Z", "duration_ms": 35000 } },
+    { "name": "run_qc_manual", "status": "done", "usage": { "input": 3381, "output": 1433, "total": 4814, "started_at": "2026-06-13T10:00:35Z", "finished_at": "2026-06-13T10:00:59Z", "duration_ms": 24000 } },
+    { "name": "execution",     "status": "running", "items": [
+      { "id": "task-1", "title": "Create `usePrivateRouteGuard` hook", "domain": "FE", "status": "fe_implementing", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "2026-06-13T10:01:00Z", "finished_at": "", "duration_ms": 0 } },
+      { "id": "task-2", "title": "Create `useAuthRouteGuard` hook", "domain": "FE", "status": "pending" },
+      { "id": "task-3", "title": "Apply `usePrivateRouteGuard` to the Home page", "domain": "FE", "status": "pending" },
+      { "id": "task-4", "title": "Apply `useAuthRouteGuard` to the Login page", "domain": "FE", "status": "pending" }
+    ] },
+    {
+      "name": "run_qc_automation",
+      "status": "pending",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
