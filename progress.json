@@ -1,0 +1,31 @@
+{
+  "issue": "SA-875",
+  "branch": "plan/SA-875-1781338581",
+  "started_at": "2026-06-13T00:00:00Z",
+  "orchestrator_usage": { "input": 1792, "output": 6950, "total": 8742 },
+  "steps": [
+    { "name": "run_planner",   "status": "done", "usage": { "input": 781, "output": 1011, "total": 1792, "started_at": "2026-06-13T00:00:00Z", "finished_at": "2026-06-13T08:17:27Z", "duration_ms": 34200000 } },
+    { "name": "run_qc_manual", "status": "done", "usage": { "input": 5832, "output": 1118, "total": 6950, "started_at": "2026-06-13T08:17:27Z", "finished_at": "2026-06-13T08:18:04Z", "duration_ms": 37000000 } },
+    { "name": "execution",     "status": "running", "items": [
+      { "id": "task-1", "title": "Create Auth Context and Provider", "domain": "FE", "status": "failed", "error": "docker run command failed with exit code 127. Output: docker: 'docker run' requires at least 1 argument\n\nUsage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]\n\nSee 'docker run --help' for more information\n/usr/bin/bash: line 10: --network: command not found\n/usr/bin/bash: line 11: -e: command not found\n/usr/bin/bash: line 12: -e: command not found\n/usr/bin/bash: line 13: -v: command not found\n/usr/bin/bash: line 14: opencode-fe-engineer:latest: command not found\n", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "2026-06-13T08:18:04Z", "finished_at": "2026-06-13T08:18:10Z", "duration_ms": 6000 } },
+      { "id": "task-2", "title": "Implement useAuth Hook", "domain": "FE", "status": "pending", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "", "finished_at": "", "duration_ms": 0 } },
+      { "id": "task-3", "title": "Create PrivateRoute Component", "domain": "FE", "status": "pending", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "", "finished_at": "", "duration_ms": 0 } },
+      { "id": "task-4", "title": "Create AuthRoute Component", "domain": "FE", "status": "pending", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "", "finished_at": "", "duration_ms": 0 } },
+      { "id": "task-5", "title": "Update App.tsx for AuthProvider and Routing", "domain": "FE", "status": "pending", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "", "finished_at": "", "duration_ms": 0 } },
+      { "id": "task-6", "title": "Create Placeholder HomePage", "domain": "FE", "status": "pending", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "", "finished_at": "", "duration_ms": 0 } },
+      { "id": "task-7", "title": "Create Placeholder LoginPage", "domain": "FE", "status": "pending", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "", "finished_at": "", "duration_ms": 0 } },
+      { "id": "task-8", "title": "Verify No Auth -> /home Redirection", "domain": "FE", "status": "skipped" },
+      { "id": "task-9", "title": "Verify Authenticated -> /login Redirection", "domain": "FE", "status": "skipped" },
+      { "id": "task-10", "title": "Verify No Auth -> /login Renders", "domain": "FE", "status": "skipped" },
+      { "id": "task-11", "title": "Verify Authenticated -> /home Renders", "domain": "FE", "status": "skipped" }
+    ] },
+    {
+      "name": "run_qc_automation",
+      "status": "pending",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
