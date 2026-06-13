@@ -1,0 +1,1 @@
+export const SLOGAN_TEXT = "Your trusted partner in workflow automation.";
