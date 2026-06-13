@@ -1,0 +1,32 @@
+{
+  "issue": "SA-876",
+  "branch": "plan/SA-876-1781349141",
+  "started_at": "2026-06-13T11:12:33Z",
+  "orchestrator_usage": { "input": 0, "output": 0, "total": 0, "duration_ms": 0 },
+  "steps": [
+    { "name": "run_planner",   "status": "done", "usage": { "input": 2978, "output": 1481, "total": 4459, "started_at": "2026-06-13T11:12:33Z", "finished_at": "2026-06-13T11:13:27Z", "duration_ms": 54000 }, "resources": {"cpu_percent":4.2,"mem_used_mb":476.2,"mem_percent":24.3,"images_disk_mb":31221.8,"containers_disk_mb":153.9,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23203.8,"captured_at":"2026-06-13T11:13:33Z"} },
+    { "name": "run_qc_manual", "status": "done", "usage": { "input": 1234, "output": 567, "total": 1801, "started_at": "2026-06-13T11:13:33Z", "finished_at": "2026-06-13T11:14:31Z", "duration_ms": 58000 }, "resources": {"cpu_percent":9.9,"mem_used_mb":461.4,"mem_percent":23.5,"images_disk_mb":31221.8,"containers_disk_mb":154.7,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23203.8,"captured_at":"2026-06-13T11:14:37Z"} },
+    { "name": "execution",     "status": "running", "items": [
+      { "id": "task-1", "title": "Create component file and basic structure", "domain": "FE", "status": "fe_implementing", "usage": { "started_at": "2026-06-13T11:14:40Z" } },
+      { "id": "task-2", "title": "Implement input and toggle button", "domain": "FE", "status": "pending" },
+      { "id": "task-3", "title": "Implement Ref API methods", "domain": "FE", "status": "pending" },
+      { "id": "task-4", "title": "Add props to input and wrapper", "domain": "FE", "status": "pending" },
+      { "id": "task-5", "title": "Embed SVG icons and dynamic aria-label", "domain": "FE", "status": "pending" },
+      { "id": "task-6", "title": "Create CSS file and apply basic styles", "domain": "FE", "status": "pending" },
+      { "id": "task-7", "title": "Refine CSS styles", "domain": "FE", "status": "pending" },
+      { "id": "task-8", "title": "Accessibility enhancements", "domain": "FE", "status": "pending" },
+      { "id": "task-9", "title": "Create a test file and basic test", "domain": "FE", "status": "pending" },
+      { "id": "task-10", "title": "Test toggle functionality", "domain": "FE", "status": "pending" },
+      { "id": "task-11", "title": "Test Ref API methods", "domain": "FE", "status": "pending" },
+      { "id": "task-12", "title": "Test prop handling", "domain": "FE", "status": "pending" }
+    ]},
+    {
+      "name": "run_qc_automation",
+      "status": "pending",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
