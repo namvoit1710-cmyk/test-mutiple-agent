@@ -1,0 +1,24 @@
+{
+  "issue": "SA-875",
+  "branch": "plan/SA-875-1781327621",
+  "started_at": "2026-06-13T10:00:00Z",
+  "orchestrator_usage": { "input": 0, "output": 0, "total": 0 },
+  "steps": [
+    { "name": "run_planner",   "status": "done", "usage": { "input": 2048, "output": 1024, "total": 3072, "started_at": "2026-06-13T10:00:00Z", "finished_at": "2026-06-13T10:00:27Z", "duration_ms": 27000 } },
+    { "name": "run_qc_manual", "status": "done", "usage": { "input": 5337, "output": 1116, "total": 6453, "started_at": "2026-06-13T10:00:27Z", "finished_at": "2026-06-13T10:00:04Z", "duration_ms": 37000 } },
+    { "name": "execution",     "status": "done", "items": [
+      { "id": "task-1", "title": "Create usePrivateRouteGuard hook", "domain": "FE", "status": "failed", "error": "docker: 'docker run' requires at least 1 argument\n\nUsage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]\n\nSee 'docker run --help' for more information\n/usr/bin/bash: line 7: -v: command not found\n", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "2026-06-13T10:00:05Z", "finished_at": "2026-06-13T10:00:05Z", "duration_ms": 0 } },
+      { "id": "task-2", "title": "Create useAuthRouteGuard hook", "domain": "FE", "status": "failed", "error": "docker: 'docker run' requires at least 1 argument\n\nUsage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]\n\nSee 'docker run --help' for more information\n/usr/bin/bash: line 7: -v: command not found\n", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "2026-06-13T10:00:08Z", "finished_at": "2026-06-13T10:00:08Z", "duration_ms": 0 } },
+      { "id": "task-3", "title": "Apply PrivateRouteGuard to Home page", "domain": "FE", "status": "failed", "error": "docker: 'docker run' requires at least 1 argument\n\nUsage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]\n\nSee 'docker run --help' for more information\n/usr/bin/bash: line 7: -v: command not found\n", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "2026-06-13T10:00:11Z", "finished_at": "2026-06-13T10:00:11Z", "duration_ms": 0 } },
+      { "id": "task-4", "title": "Apply AuthRouteGuard to Login page", "domain": "FE", "status": "failed", "error": "docker: 'docker run' requires at least 1 argument\n\nUsage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]\n\nSee 'docker run --help' for more information\n/usr/bin/bash: line 7: -v: command not found\n", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "2026-06-13T10:00:14Z", "finished_at": "2026-06-13T10:00:14Z", "duration_ms": 0 } }
+    ] },
+    {
+      "name": "run_qc_automation",
+      "status": "pending",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
