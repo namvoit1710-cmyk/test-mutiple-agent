@@ -1,0 +1,35 @@
+{
+  "issue": "SA-875",
+  "branch": "plan/SA-875-1781319160",
+  "started_at": "2026-06-13T10:00:00Z",
+  "orchestrator_usage": { "input": 0, "output": 0, "total": 0 },
+  "steps": [
+    { "name": "run_planner",   "status": "done", "usage": { "input": 378, "output": 588, "total": 966, "started_at": "2026-06-13T10:00:05Z", "finished_at": "2026-06-13T10:00:25Z", "duration_ms": 20000 } },
+    { "name": "run_qc_manual", "status": "done", "usage": { "input": 1035, "output": 748, "total": 1783, "started_at": "2026-06-13T10:00:25Z", "finished_at": "2026-06-13T10:00:57Z", "duration_ms": 32000 } },
+    { "name": "execution",     "status": "done", "items": [
+        { "id": "task-1", "title": "Implement Private Route Guard for Home Page", "domain": "FE", "status": "fe_done", "error": "", "usage": { "input": 130, "output": 160, "total": 290, "started_at": "2026-06-13T10:01:00Z", "finished_at": "2026-06-13T10:01:40Z", "duration_ms": 40000 } },
+        { "id": "task-2", "title": "Implement Auth Route Guard for Login Page", "domain": "FE", "status": "failed", "error": "File not found: /workspace/app/tests/task-2.test.ts", "usage": { "input": 100, "output": 120, "total": 220, "started_at": "2026-06-13T10:01:40Z", "finished_at": "2026-06-13T10:01:57Z", "duration_ms": 17000 } },
+        { "id": "task-3", "title": "Integrate Routing Guards with the Router", "domain": "FE", "status": "skipped", "error": "", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "", "finished_at": "", "duration_ms": 0 } },
+        { "id": "task-4", "title": "Verify All Acceptance Criteria", "domain": "FE", "status": "skipped", "error": "", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "", "finished_at": "", "duration_ms": 0 } }
+    ] },
+    {
+      "name": "run_qc_automation",
+      "status": "done",
+      "total_tasks": 1,
+      "pass": 0,
+      "fail": 1,
+      "results": [
+        {
+          "task_id": "task-1",
+          "result": "error",
+          "usage": {
+            "input": 100,
+            "output": 120,
+            "total": 220
+          },
+          "detail": "I encountered an issue: the file `app/qe/manual/fe/SA-875.md` was not found. I need this file to proceed with writing the Playwright spec. Please ensure the file exists and is accessible. If it\'s missing, I won\'t be able to generate the tests."
+        }
+      ]
+    }
+  ]
+}
