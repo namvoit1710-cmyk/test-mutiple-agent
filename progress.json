@@ -1,0 +1,43 @@
+
+{
+  "issue": "SA-877",
+  "branch": "plan/SA-877-1781360548",
+  "started_at": "2026-06-13T14:22:37Z",
+  "orchestrator_usage": { "input": 0, "output": 0, "total": 0, "duration_ms": 0 },
+  "steps": [
+    { "name": "run_planner",   "status": "done", "usage": { "input": 1080, "output": 1200, "total": 2280, "started_at": "2026-06-13T14:22:37Z", "finished_at": "2026-06-13T14:23:28Z", "duration_ms": 51000 }, "resources": {"cpu_percent":4.7,"mem_used_mb":463.5,"mem_percent":23.6,"images_disk_mb":30187.5,"containers_disk_mb":154.4,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:23:40Z"} },
+    { "name": "run_qc_manual", "status": "done", "usage": { "input": 3520, "output": 2008, "total": 5528, "started_at": "2026-06-13T14:23:40Z", "finished_at": "2026-06-13T14:24:28Z", "duration_ms": 48000 }, "resources": {"cpu_percent":1.4,"mem_used_mb":445,"mem_percent":22.7,"images_disk_mb":30187.5,"containers_disk_mb":154.6,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:24:39Z"} },
+    { "name": "execution",     "status": "done", "items": [
+      { "id": "task-1", "title": "Create `src/components/input.tsx` file", "domain": "FE", "status": "fe_done", "usage": { "input": 3660, "output": 318, "total": 3978, "started_at": "2026-06-13T14:24:40Z", "finished_at": "2026-06-13T14:25:33Z", "duration_ms": 53000 }, "resources": {"cpu_percent":6.9,"mem_used_mb":455.5,"mem_percent":23.2,"images_disk_mb":30197.8,"containers_disk_mb":155.3,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:25:48Z"} },
+      { "id": "task-2", "title": "Implement `InputProps` interface in `input.tsx`", "domain": "FE", "status": "fe_done", "usage": { "input": 1200, "output": 1200, "total": 2400, "started_at": "2026-06-13T14:25:48Z", "finished_at": "2026-06-13T14:26:59Z", "duration_ms": 71000 }, "resources": {"cpu_percent":5.9,"mem_used_mb":461.3,"mem_percent":23.5,"images_disk_mb":30197.8,"containers_disk_mb":155.8,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:27:14Z"} },
+      { "id": "task-3", "title": "Create basic `Input` functional component in `input.tsx`", "domain": "FE", "status": "fe_done", "usage": { "input": 1063, "output": 177, "total": 1240, "started_at": "2026-06-13T14:27:14Z", "finished_at": "2026-06-13T14:28:03Z", "duration_ms": 49000 }, "resources": {"cpu_percent":4.3,"mem_used_mb":387.8,"mem_percent":19.8,"images_disk_mb":30197.8,"containers_disk_mb":155.9,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:28:17Z"} },
+      { "id": "task-4", "title": "Implement controlled component logic in `input.tsx`", "domain": "FE", "status": "fe_done", "usage": { "input": 710, "output": 107, "total": 817, "started_at": "2026-06-13T14:28:17Z", "finished_at": "2026-06-13T14:29:10Z", "duration_ms": 53000 }, "resources": {"cpu_percent":4.2,"mem_used_mb":378.4,"mem_percent":19.3,"images_disk_mb":30197.8,"containers_disk_mb":156.2,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:29:26Z"} },
+      { "id": "task-5", "title": "Pass through native input props in `input.tsx`", "domain": "FE", "status": "fe_done", "usage": { "input": 3056, "output": 483, "total": 3539, "started_at": "2026-06-13T14:29:26Z", "finished_at": "2026-06-13T14:30:18Z", "duration_ms": 52000 }, "resources": {"cpu_percent":4,"mem_used_mb":384.7,"mem_percent":19.6,"images_disk_mb":30197.8,"containers_disk_mb":156.6,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:30:35Z"} },
+      { "id": "task-6", "title": "Create `src/components/input.css` file", "domain": "FE", "status": "fe_done", "usage": { "input": 3500, "output": 506, "total": 4006, "started_at": "2026-06-13T14:30:35Z", "finished_at": "2026-06-13T14:31:33Z", "duration_ms": 58000 }, "resources": {"cpu_percent":5.4,"mem_used_mb":439.7,"mem_percent":22.4,"images_disk_mb":30197.8,"containers_disk_mb":157,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:31:52Z"} },
+      { "id": "task-7", "title": "Add BEM styles to `input.css`", "domain": "FE", "status": "fe_done", "usage": { "input": 3051, "output": 600, "total": 3651, "started_at": "2026-06-13T14:31:52Z", "finished_at": "2026-06-13T14:32:48Z", "duration_ms": 56000 }, "resources": {"cpu_percent":4.6,"mem_used_mb":433,"mem_percent":22.1,"images_disk_mb":30197.8,"containers_disk_mb":157.4,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:33:05Z"} },
+      { "id": "task-8", "title": "Import and apply `input.css` in `input.tsx`", "domain": "FE", "status": "fe_done", "usage": { "input": 1969, "output": 704, "total": 2673, "started_at": "2026-06-13T14:33:05Z", "finished_at": "2026-06-13T14:34:01Z", "duration_ms": 56000 }, "resources": {"cpu_percent":4.1,"mem_used_mb":438.1,"mem_percent":22.3,"images_disk_mb":30197.8,"containers_disk_mb":157.8,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:34:24Z"} },
+      { "id": "fix-task-2", "title": "QC fix: Implement `InputProps` interface in `input.tsx`", "domain": "FE", "status": "fe_done", "error": "", "usage": { "input": 4340, "output": 1028, "total": 5368, "started_at": "2026-06-13T14:38:41Z", "finished_at": "2026-06-13T14:40:22Z", "duration_ms": 101000 }, "resources": {"cpu_percent":7.4,"mem_used_mb":409.8,"mem_percent":20.9,"images_disk_mb":30197.8,"containers_disk_mb":160.2,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:40:42Z"} },
+      { "id": "fix-task-5", "title": "QC fix: Pass through native input props in `input.tsx`", "domain": "FE", "status": "fe_done", "error": "", "usage": { "input": 3050, "output": 1006, "total": 4056, "started_at": "2026-06-13T14:40:42Z", "finished_at": "2026-06-13T14:41:51Z", "duration_ms": 69000 }, "resources": {"cpu_percent":5.8,"mem_used_mb":351.5,"mem_percent":17.9,"images_disk_mb":30197.8,"containers_disk_mb":161.3,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:42:13Z"} },
+      { "id": "qc-automation-retest", "title": "QC automation re-test", "domain": "QC", "status": "fe_done", "error": "", "usage": { "input": 0, "output": 0, "total": 0, "started_at": "2026-06-13T14:42:13Z", "finished_at": "2026-06-13T14:43:21Z", "duration_ms": 68000 }, "resources": {"cpu_percent":2.2,"mem_used_mb":429.6,"mem_percent":21.9,"images_disk_mb":30197.8,"containers_disk_mb":162.3,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:43:41Z"} }
+    ] },
+    {
+      "name": "run_qc_automation",
+      "status": "done",
+      "total_tasks": 8,
+      "pass": 8,
+      "fail": 0,
+      "results": [
+        { "task_id": "task-1", "result": "pass", "detail": "" },
+        { "task_id": "task-2", "result": "fixed", "detail": "" },
+        { "task_id": "task-3", "result": "pass", "detail": "" },
+        { "task_id": "task-4", "result": "pass", "detail": "" },
+        { "task_id": "task-5", "result": "fixed", "detail": "" },
+        { "task_id": "task-6", "result": "pass", "detail": "" },
+        { "task_id": "task-7", "result": "pass", "detail": "" },
+        { "task_id": "task-8", "result": "pass", "detail": "" }
+      ],
+      "usage": { "input": 0, "output": 0, "total": 0, "started_at": "2026-06-13T14:34:24Z", "finished_at": "2026-06-13T14:43:21Z", "duration_ms": 537000 },
+      "resources": {"cpu_percent":13.3,"mem_used_mb":372.9,"mem_percent":19,"images_disk_mb":30197.8,"containers_disk_mb":158.3,"volumes_disk_mb":1460.2,"build_cache_disk_mb":23582.7,"captured_at":"2026-06-13T14:38:41Z"}
+    }
+  ]
+}
