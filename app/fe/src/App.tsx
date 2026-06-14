@@ -1,3 +1,12 @@
-export default function App() {
-  return <h1>Hello World</h1>
+import React from 'react';
+import { LoginForm } from './components/LoginForm';
+
+function App() {
+  return (
+    <div className="App">
+      <LoginForm />
+    </div>
+  );
 }
+
+export default App;
