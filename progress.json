@@ -1,0 +1,149 @@
+{
+  "issue": "SA-847",
+  "branch": "plan/SA-847-1781405521",
+  "started_at": "2026-06-14T02:52:19Z",
+  "orchestrator_usage": {
+    "input": 4520,
+    "output": 1250,
+    "total": 5770,
+    "duration_ms": 1460585
+  },
+  "steps": [
+    {
+      "name": "run_planner",
+      "status": "done",
+      "usage": {
+        "input": 4523,
+        "output": 3342,
+        "total": 7865,
+        "started_at": "2026-06-14T03:00:00Z",
+        "finished_at": "2026-06-14T03:00:35Z",
+        "duration_ms": 35000
+      },
+      "resources": {
+        "cpu_percent": 14.9,
+        "mem_used_mb": 1141.4,
+        "mem_percent": 7.3,
+        "images_disk_mb": 28979.2,
+        "containers_disk_mb": 1410,
+        "volumes_disk_mb": 240,
+        "build_cache_disk_mb": 20971.5,
+        "captured_at": "2026-06-14T03:00:41Z"
+      }
+    },
+    {
+      "name": "run_qc_manual",
+      "status": "done",
+      "usage": {
+        "input": 5241,
+        "output": 1128,
+        "total": 6369,
+        "started_at": "2026-06-14T03:01:30Z",
+        "finished_at": "2026-06-14T03:03:32Z",
+        "duration_ms": 122000
+      },
+      "resources": {
+        "cpu_percent": 21.5,
+        "mem_used_mb": 1142.8,
+        "mem_percent": 7.3,
+        "images_disk_mb": 28979.2,
+        "containers_disk_mb": 1410,
+        "volumes_disk_mb": 240,
+        "build_cache_disk_mb": 20971.5,
+        "captured_at": "2026-06-14T03:03:41Z"
+      }
+    },
+    {
+      "name": "execution",
+      "status": "running",
+      "items": [
+        {
+          "id": "task-1",
+          "title": "Create Auth Context and Constants",
+          "domain": "FE",
+          "status": "fe_done",
+          "started_at": "2026-06-14T03:06:25Z",
+          "finished_at": "2026-06-14T03:07:25Z",
+          "duration_ms": 60000,
+          "usage": {
+            "input": 4520,
+            "output": 450,
+            "total": 4970
+          },
+          "resources": {
+            "cpu_percent": 164.1,
+            "mem_used_mb": 1278.3,
+            "mem_percent": 8.2,
+            "images_disk_mb": 28979.2,
+            "containers_disk_mb": 1401.9,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 20971.5,
+            "captured_at": "2026-06-14T03:07:32Z"
+          }
+        },
+        {
+          "id": "task-2",
+          "title": "Implement PrivateRoute Component",
+          "domain": "FE",
+          "status": "fe_done",
+          "started_at": "2026-06-14T03:09:09Z",
+          "finished_at": "2026-06-14T03:13:30Z",
+          "duration_ms": 242100,
+          "usage": {
+            "input": 2540,
+            "output": 1120,
+            "total": 3660
+          },
+          "resources": {
+            "cpu_percent": 3.2,
+            "mem_used_mb": 419.4,
+            "mem_percent": 2.8,
+            "images_disk_mb": 28672,
+            "containers_disk_mb": 1097.7,
+            "volumes_disk_mb": 240,
+            "build_cache_disk_mb": 20971.5,
+            "captured_at": "2026-06-14T03:13:39Z"
+          }
+        },
+        {
+          "id": "task-3",
+          "title": "Implement AuthRoute Component",
+          "domain": "FE",
+          "status": "fe_implementing"
+        },
+        {
+          "id": "task-4",
+          "title": "Develop PasswordControl Component",
+          "domain": "FE",
+          "status": "pending"
+        },
+        {
+          "id": "task-5",
+          "title": "Build Login Page",
+          "domain": "FE",
+          "status": "pending"
+        },
+        {
+          "id": "task-6",
+          "title": "Build Home Page",
+          "domain": "FE",
+          "status": "pending"
+        },
+        {
+          "id": "task-7",
+          "title": "Integrate Routes and Auth Provider in App.tsx",
+          "domain": "FE",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "name": "run_qc_automation",
+      "status": "pending",
+      "total_tasks": 0,
+      "pass": 0,
+      "fail": 0,
+      "results": []
+    }
+  ]
+}
